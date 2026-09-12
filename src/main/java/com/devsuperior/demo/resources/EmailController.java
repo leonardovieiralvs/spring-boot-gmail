@@ -20,8 +20,8 @@ public class EmailController {
 	private EmailService emailService;
 	
 	@PostMapping
-	public ResponseEntity<Void> sendEmail(@Valid @RequestBody EmailDTO obj) {
-		emailService.sendEmail(obj);
+	public ResponseEntity<Void> sendEmail(@Valid @RequestBody String to, String subject, String body) {
+		emailService.sendEmail(to, subject, body);
 		return ResponseEntity.noContent().build();
 	}
 }
