@@ -7,35 +7,20 @@ public class EmailDTO {
 
     @NotBlank
     @Email
-    private String to;
-    
-    @NotBlank
-    private String subject;
-    
-    @NotBlank
-    private String body;
+    private String email;
 
-	public String getTo() {
-		return to;
-	}
+    public EmailDTO() {
+    }
 
-	public void setTo(String to) {
-		this.to = to;
-	}
+    public EmailDTO(String email) {
+        this.email = email;
+    }
 
-	public String getSubject() {
-		return subject;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

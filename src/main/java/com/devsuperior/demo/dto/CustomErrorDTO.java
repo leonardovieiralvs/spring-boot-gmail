@@ -1,7 +1,10 @@
 package com.devsuperior.demo.dto;
 
+import lombok.Builder;
+
 import java.time.Instant;
 
+@Builder
 public class CustomErrorDTO {
 
     private Instant timestamp;

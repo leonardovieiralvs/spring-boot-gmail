@@ -15,17 +15,20 @@ public class EmailService {
 	
 	@Value("${spring.mail.username}")
 	private String emailFrom;
-	
-    @Autowired
-    private JavaMailSender emailSender;
 
-    public void sendEmail(EmailDTO obj) {
+    private final JavaMailSender emailSender;
+
+    public EmailService(JavaMailSender emailSender) {
+        this.emailSender = emailSender;
+    }
+
+    public void sendEmail(String to, String subject, String body) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(emailFrom);
-            message.setTo(obj.getTo());
-            message.setSubject(obj.getSubject());
-            message.setText(obj.getBody());
+            message.setTo(to);
+            message.setSubject(subject);
+            message.setText(body);
             emailSender.send(message);
         } 
         catch (EmailException e){
