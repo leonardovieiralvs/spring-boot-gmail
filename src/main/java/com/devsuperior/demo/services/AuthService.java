@@ -51,8 +51,7 @@ public class AuthService {
         String text = "Acesse o link para definir uma nova senha (válido por " + tokenMinutes + " minutos):\n\n"
                 + recoverUri + token;
 
-        String test = "é o tal do disparo do lvs filho da puta, sai da frente XDXDXDDDD";
-        emailService.sendEmail(body.getEmail(), "Recuperação de senha", test);
+        emailService.sendEmail(body.getEmail(), "Recuperação de senha", text );
 
     }
 
