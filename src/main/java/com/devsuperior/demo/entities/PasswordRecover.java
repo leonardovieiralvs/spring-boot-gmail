@@ -1,11 +1,15 @@
 package com.devsuperior.demo.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.Instant;
 
 @Entity
 @Table(name = "tb_password_recover")
+@Getter
+@Setter
 public class PasswordRecover {
 
     @Id
@@ -30,35 +34,4 @@ public class PasswordRecover {
         this.expiration = expiration;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Instant getExpiration() {
-        return expiration;
-    }
-
-    public void setExpiration(Instant expiration) {
-        this.expiration = expiration;
-    }
 }
